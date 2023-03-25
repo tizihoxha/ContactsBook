@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - ContactsBook</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/ContactsBook.styles.css" asp-append-version="true">
+    <style>
+        /* Set color for brand and nav links */
+        header a.navbar-brand,
+        header .navbar-nav .nav-link {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Set main content height and background color */
+        main {
+            min-height: calc(100vh - 120px);
+            background-color: #F8F9FA;
+            padding: 20px;
+        }
+
+        /* Set footer style */
+        footer {
+            background-color: #007fb5;
+            color: #fff;
+            padding: 10px;
+            margin-top: 50px;
+        }
+
+        /* Set toolbar style */
+        .navbar {
+            background-color: #007fb5;
+        }
+
+     
+
+        .navbar-toggler-icon {
+            color: #fff;
+        }
+
+        /* Set active link style */
+        .navbar .nav-item.active .nav-link {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body style="background-color: #E9F0F5;">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <!-- Brand and toggle button -->
+                <a class="navbar-brand"
+                   asp-area=""
+                   asp-controller="Home"
+                   asp-action="Index">ContactsBook</a>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbar"
+                        aria-controls="navbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navigation links -->
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Access"
+                               asp-action="First">Roles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Contacts"
+                               asp-action="Index">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Contacts"
+                               asp-action="Add">Add Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Contacts"
+                               asp-action="Import">Import Contact</a>
+                        </li>
+                    </ul>
+                    <!-- Login partial view -->
+                  <partial name="_LoginPartial" />
+                             
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Main content area -->
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="text-white text-center py-2">
+        <div class="container">
+            &copy; 2023 ContactsBook
+        </div>
+    </footer>
+     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

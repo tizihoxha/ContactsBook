@@ -1,0 +1,56 @@
+﻿@model List<ContactsBook.Models.Domain.Contact>
+
+<h2>Imported Contacts</h2>
+
+@if (Model.Count > 0)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Email Addresses</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contact in Model)
+            {
+                <tr>
+                    <td>@contact.Name</td>
+                    <td>@contact.Lastname</td>
+                    <td>@contact.PhoneNumber</td>
+                    <td>@contact.Address</td>
+                    <td>
+                        @if (contact.EmailAddress != null)
+                        {
+                            foreach (var email in contact.EmailAddress)
+                            {
+                                <p>@email.EmailAddress</p>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No contacts have been imported yet.</p>
+}
+
+<h2>Import Contacts</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div>
+        <label for="file">Select a CSV file:</label>
+        <input type="file" name="file" id="file" accept=".csv" required />
+    </div>
+    <div>
+        <label for="delimiter">Delimiter:</label>
+        <input type="text" name="delimiter" id="delimiter" value="," required />
+    </div>
+    <button type="submit">Import</button>
+</form>

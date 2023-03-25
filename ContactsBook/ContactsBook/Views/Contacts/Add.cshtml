@@ -1,0 +1,52 @@
+﻿@model ContactsBook.Models.ContactViewModel
+@{
+
+}
+<h1>Add Contact</h1>
+
+<form method="post" action="Add" class="mt-4">
+    <div class="mb-2">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control form-control" asp-for="Name">
+    </div>
+    <div class="mb-2">
+        <label for="" class="form-label">Lastname</label>
+        <input type="text" class="form-control form-control" asp-for="Lastname">
+    </div>
+    <div class="mb-2" id="email-addresses">
+        <label for="" class="form-label">Email Address</label>
+        @foreach (var email in Model.EmailAddress)
+        {
+            <input type="email" class="form-control form-control" name="EmailAddress[]" value="@email.EmailAddress">
+
+        }
+        <button type="button" class="btn btn-secondary" id="add-email-address">Add Email Address</button>
+    </div>
+    <div class="mb-2">
+        <label for="" class="form-label">Phone Number</label>
+        <input type="text" class="form-control form-control" asp-for="PhoneNumber">
+    </div>
+    <div class="mb-2">
+        <label for="" class="form-label">Address</label>
+        <input type="text" class="form-control form-control" asp-for="Address">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            var maxEmails = 5;
+            var emailsCount = $('#email-addresses input[type=email]').length;
+
+            $('#add-email-address').click(function () {
+                if (emailsCount < maxEmails) {
+                    var input = '<input type="email" class="form-control form-control" name="EmailAddress[]" />';
+                    $('#email-addresses').append(input);
+                    emailsCount++;
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,60 @@
+﻿@model List<ContactsBook.Models.Domain.Contact>
+@{
+   
+}
+
+<h1>Contacts</h1>
+
+<form method="get" asp-action="Index">
+    <div class="d-flex justify-content-end">
+        <p class="btn btn-utline-primary">
+            <input type="search" placeholder="Enter Contact Name Or Email" value="@ViewData["GetContactDetails"]" name="contactSearch" class="btn btn-outline-light" style="width: 300px;">
+            <input type="submit" value="Search" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-primary">Get All Contacts</a>
+            <a asp-action="ExportToCsv" asp-route-contactSearch="@ViewData["GetContactDetails"]" class="btn btn-light" style="background-color: #8bc34a; color: white; border: 1px solid #8bc34a;">Export to CSV</a>
+            <a asp-action="ExportToExcel" asp-route-contactSearch="@ViewData["GetContactDetails"]" class="btn btn-light" style="background-color: #8bc34a; color: white; border: 1px solid #8bc34a;">Export to Excel</a>
+            <a asp-action="Import" asp-route-contactSearch="@ViewData["GetContactDetails"]" class="btn btn-light" style="background-color: #8bc34a; color: white; border: 1px solid #8bc34a;">Bulk Import</a>
+        </p>
+    </div>
+</form>
+
+<div class="mt-4"></div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+            <th>Address</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model)
+        {
+            <tr>
+                <td>@contact.Id</td>
+                <td>@contact.Name</td>
+                <td>@contact.Lastname</td>
+                <td>
+                    
+                        @foreach (var email in contact.EmailAddress)
+                        {
+                            <td>@email.EmailAddress</td>
+
+                            <br>
+                        }
+                  
+                </td>
+                <td>@contact.PhoneNumber</td>
+                <td>@contact.Address</td>
+                <td><a href="Contacts/View/@contact.Id">View</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

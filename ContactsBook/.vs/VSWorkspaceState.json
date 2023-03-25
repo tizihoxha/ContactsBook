@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ContactsBook",
+    "\\ContactsBook\\Data",
+    "\\ContactsBook\\Migrations",
+    "\\ContactsBook\\Models",
+    "\\ContactsBook\\Models\\Domain",
+    "\\ContactsBook\\Views",
+    "\\ContactsBook\\Views\\Access",
+    "\\ContactsBook\\Views\\Contacts",
+    "\\ContactsBook\\Views\\Home"
+  ],
+  "SelectedNode": "\\ContactsBook\\Views\\Contacts\\View.cshtml",
+  "PreviewInSolutionExplorer": false
+}

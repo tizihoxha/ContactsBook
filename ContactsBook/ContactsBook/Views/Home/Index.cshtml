@@ -1,0 +1,116 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ContactBook App</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css">
+	<style>
+		body {
+			background-color: #F8F9FA;
+		}
+
+		header {
+			background-color: #343A40;
+			color: #FFFFFF;
+		}
+
+		h1 {
+			font-size: 3rem;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+		}
+
+		main {
+			background-color: #FFFFFF;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(135, 206, 235, 0.3);
+			padding: 2rem;
+			margin-bottom: 2rem;
+		}
+
+		ul {
+			list-style: disc; /* Use disc to display a solid bullet point, circle for a hollow bullet point, or square for a square bullet point */
+			padding-left: 1em; /* Add some left padding to the list to make room for the bullet points */
+		}
+
+		li {
+			margin-right: 0.5rem;
+		}
+
+		a {
+			color: #043353;
+			text-decoration: none;
+		}
+
+			a:hover {
+				content: "✓";
+				color: #0056B3;
+				text-decoration: underline;
+			}
+
+
+	</style>
+</head>
+<body style="background-color: #E9F0F5;">
+	<header class="container-fluid py-3" style="background: linear-gradient(to right, #0077b6, #2b8ead, #6d95c3, #a4b6d6, #c5dce7);">
+		<h1 style="color: white;">ContactBook</h1>
+	</header>
+	<nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to right, #0077b6, #2b8ead, #6d95c3, #a4b6d6, #c5dce7);">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">ContactBook</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="https://localhost:7175/Access/First">Roles</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://localhost:7175/Contacts">Contacts</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://localhost:7175/Contacts/Add">Add Contact</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://localhost:7175/Contacts/View/">Edit Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<main class="container my-5">
+		<div class="row">
+			<div class="col-lg-8">
+				<p><h2 style="background: #0f1626;  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;">Welcome to my ContactBook</h2></p>
+				<div class="container my-5">
+					<h5 style=" margin-bottom: 3rem;">ContactBook App is primarily meant for keeping the records of contacts.</h5>
+					<h6 style=" margin-bottom: 1rem;">It has the following functionalities:</h6>
+					<ul style="margin-bottom: 2rem; list-style-type: none;">
+						<li style=" margin-bottom: 0.5rem;"><i class="bi bi-check2"></i> Register</li>
+						<li style=" margin-bottom: 0.5rem;"><i class="bi bi-check2"></i> Login/Logout</li>
+						<li style=" margin-bottom: 0.5rem;"><i class="bi bi-check2"></i> Creates a new contact</li>
+						<li style=" margin-bottom: 0.5rem;"><i class="bi bi-check2"></i> Edits the contact</li>
+						<li style=" margin-bottom: 0.5rem;"><i class="bi bi-check2"></i> Deletes the contact</li>
+						<li style=" margin-bottom: 0.5rem;"><i class="bi bi-check2"></i> Search functionality</li>
+						<li style=" margin-bottom: 0.5rem;"><i class="bi bi-check2"></i> Role assignment: Admin/User</li>
+						<li style=" margin-bottom: 0.5rem;"><i class="bi bi-check2"></i> Saves search result to CSV &amp; Excel file</li>
+					</ul>
+				</div>
+
+		</div>
+	</main>
+
+</body>
+</html>
+
+
